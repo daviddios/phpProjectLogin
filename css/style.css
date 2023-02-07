@@ -15,7 +15,8 @@ body {
   padding: 20px;
 }
 .page {
-  background: #e2e2e5;
+  
+  background: linear-gradient(#ffb4b4, #b8beff);
   display: flex;
   flex-direction: column;
   height: calc(100% - 40px);
@@ -61,7 +62,12 @@ body {
 .login {
   font-size: 50px;
   font-weight: 900;
-  margin: 50px 40px 40px;
+  margin: 50px 40px 0px;
+}
+h1{
+  font-size: 2.5rem;
+  font-weight: 900;
+
 }
 .eula {
   color: #999;
@@ -95,7 +101,7 @@ path {
   stroke-dasharray: 240 1386;
 }
 .form {
-  margin: 40px;
+  margin: 0px 40px 0;
   position: absolute;
 }
 input.inline{
@@ -106,7 +112,13 @@ form.inline{
   display: inline;
   width: 30%;
 }
-
+.form input{
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.028);
+}
+.form #submit {
+  background: #00000000;
+}
 label {
   color:  #c2c2c5;
   display: block;
@@ -124,6 +136,10 @@ input {
   line-height: 30px;
   outline: none !important;
   width: 100%;
+}
+.centered-page-text{
+  margin: 0 auto;
+  text-align: center;
 }
 input::-moz-focus-inner { 
   border: 0; 
