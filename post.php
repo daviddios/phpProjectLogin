@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>PHP examples</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -23,9 +23,11 @@
     <div class="right">
       <div class="form">
         <h2>Welcome <?php echo $_SESSION["name"];?></h2>
-        <p>Is <span style="color:red;"><?php echo $_SESSION["email"];?> </span>your email for sure?</p>
-        <a href="/phpdir/index.php"> Let me try again </a>
-        <a href="/phpdir/database.php"> It's OK!</a>
+        <!--<p>Is <span style="color:red;"><?php echo $_SESSION["email"];?> </span>your email for sure?</p>-->
+        <p>
+          <a style="text-decoration: none;" href="index.php"> Let me try again </a>  
+          <a style="text-decoration: none;" href="database.php"> It's OK!</a>
+        </p>
         
       </div>
     </div>
