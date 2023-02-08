@@ -69,6 +69,7 @@ You have viewed this page for <?= $_COOKIE['count'] ?> times.
       <?php
       if(isset($_POST['comprobar']))
       {
+        echo 'now youre here';
          checkUser();
       } 
       ?>

@@ -25,7 +25,7 @@
         <h2>Welcome <?php echo $_SESSION["name"];?></h2>
         <!--<p>Is <span style="color:red;"><?php echo $_SESSION["email"];?> </span>your email for sure?</p>-->
         <p>
-          <a style="text-decoration: none;" href="index.php"> Let me try again </a>  
+          <a style="text-decoration: none;" href="signup.html"> Let me try again </a>  
           <a style="text-decoration: none;" href="database.php"> It's OK!</a>
         </p>
         
