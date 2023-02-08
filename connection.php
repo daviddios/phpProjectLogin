@@ -1,17 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "prueba2";
-$password = "prueba";
-$myDB = "base_prueba";
+  $servername = "localhost";
+  $username = "prueba2";
+  $password = "prueba";
+  $dbname = "base_prueba";
 
-try {
+    $con = new mysqli($servername, $username, $password, $dbname);
     
-    $conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);    
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    if ($conn != null){
-      echo 'You are connected';
+    if ($con->connect_error) {
+  die("Connection failed: " . $con->connect_error);
     }
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-?>
