@@ -9,10 +9,21 @@ function checkUser()
         $sqlMail = $row['email'];
         $sqlPass = $row['pass'];
     }
-    echo $sqlMail . " - " . $sqlPass;
-
-    /* if ($sqlMail == $_POST["email"]){
-        echo 'true';
-    } */
+    /* echo $_POST['email']. " - " . $sqlMail . "\t";
+    echo $_POST['password']. " - " . $sqlPass;
+ */
+    if ($sqlMail == $_POST["email"]) {
+        echo 'User exists';
+        if ($sqlPass == $_POST['password']) {
+            echo 'Access garanted';
+            header('Location: /panel/index.php');
+        } else {
+            echo 'Wrong Password';
+        }
+        ;
+    } else {
+        echo 'User doesnt exists';
+    }
+    ;
 }
 ?>

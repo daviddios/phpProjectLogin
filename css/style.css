@@ -15,18 +15,16 @@ body {
   padding: 20px;
 }
 .page {
-  
+  height: 100vh;
   background: linear-gradient(#ffb4b4, #b8beff);
   display: flex;
   flex-direction: column;
-  height: calc(100% - 40px);
   position: absolute;
   place-content: center;
   width: calc(100% - 40px);
 }
 @media (max-width: 767px) {
   .page {
-    height: auto;
     margin-bottom: 20px;
     padding-bottom: 20px;
   }
