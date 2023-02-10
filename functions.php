@@ -1,29 +1,30 @@
 <?php
     session_start();
+    $_SESSION['panelUsername'];
+    $_SESSION['panelMail'];
 function checkUser()
 {
     require 'connection.php';
-    $sql = "SELECT email, pass from app_user where email = '" . $_POST["email"] . "'";
+    $sql = "SELECT username, userpass from app_user where username = '" . $_POST["username"] . "'";
     $conn->query($sql);
     foreach ($conn->query($sql) as $row) {
-        $sqlMail = $row['email'];
-        $sqlPass = $row['pass'];
+        $sqlUser = $row['username'];
+        $sqlPass = $row['userpass'];
+        $_SESSION['panelUsername']=$sqlUser;
     }
-    /* echo $_POST['email']. " - " . $sqlMail . "\t";
-    echo $_POST['password']. " - " . $sqlPass;
- */
-    if ($sqlMail == $_POST["email"]) {
+    if ($sqlUser == $_POST["username"]) {
         echo 'User exists';
-        if ($sqlPass == $_POST['password']) {
-            echo 'Access garanted';
-            header('Location: /panel/index.php');
+        if (password_verify($_POST["password"], $sqlPass)) {
+            echo 'Access garanted, HashCheck';
+            header('Location: /phptest/panel/panel.php');
         } else {
-            echo 'Wrong Password';
+            
         }
         ;
     } else {
         echo 'User doesnt exists';
     }
+
     ;
 }
 ?>

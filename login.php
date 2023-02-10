@@ -17,7 +17,6 @@
   <!-- DELETE COOKIES FUNCTION -->
 <?php
 if(isset($_POST['deleteCookies'])) {
-    setcookie("count", "", time()-(60*60*24*7));
     unset($_COOKIE["count"]);
 }?>
   <!--END OF FUNCTIONS -->
@@ -60,8 +59,8 @@ You have viewed this page for <?= $_COOKIE['count'] ?> times.
     <div class="login">Login</div>
         <div class="form">
         <form action="login.php" method="post" name>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
+        <label for="username">username:</label>
+        <input type="username" name="username" required>
         <label for="password">Password:</label>
         <input type="password" name="password" required>
         <input type="submit" name="comprobar" id="submit" value="Submit">

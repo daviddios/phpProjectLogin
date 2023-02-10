@@ -26,15 +26,12 @@
       <div class="form">
         <?php
         require 'connection.php';
-          echo "fuck";
-          $sql = "INSERT INTO app_user (name, email, pass, city)
-                    VALUES ('" . $_SESSION["name"] . "','" . $_SESSION["email"] . "', '" . $_SESSION["pass"] . "', 'a')";
-          echo "fuck";
+          $sql = "INSERT INTO app_user (username, mail, userpass, userrol)
+                    VALUES ('" . $_SESSION["username"] . "','" . $_SESSION["email"] . "', '" . $_SESSION["pass"] . "', 'a')";
           $conn->exec($sql);
-          echo "fuck";
         $conn = null;
           ?>
-          <a href="/panel.html"><input id="submit" type="button" value="Go to Panel! 🧑🏽‍💻"></a>
+          <a href="/phptest/login.php"><input id="submit" type="button" value="Go to Login! 🧑🏽‍💻"></a>
         </div>
       </div>
     </div>
