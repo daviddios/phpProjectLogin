@@ -11,11 +11,7 @@
 <body>
   <?php
   session_start();
-  
-  
-  
   ?>
-
 <div class="page">
   <div class="container">
     <div class="left">

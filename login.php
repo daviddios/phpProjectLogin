@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <title>PHP examples</title>
   <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/phpTest/script/script.js"></script>
 
 </head>
 <header>
   <?php
   include 'connection.php';
   include 'functions.php';
+  echo session_status();
   ?>
 </header>
 <body>
-  
   <!-- DELETE COOKIES FUNCTION -->
 <?php
 if(isset($_POST['deleteCookies'])) {
@@ -50,21 +52,18 @@ You have viewed this page for <?= $_COOKIE['count'] ?> times.
 <div class="centered-page-text">
     <h1>Welcome to my app</h1>
   </div>
-  <div class="container">
-    <div class="left">
-      <div class="login">Sign Up!</div>
-      <div class="eula">Join to the recolectors community today and start to earn</div>
-    </div>
-    <div class="right">
-    <div class="login">Login</div>
-        <div class="form">
-        <form action="login.php" method="post" name>
-        <label for="username">username:</label>
-        <input type="username" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
-        <input type="submit" name="comprobar" id="submit" value="Submit">
-      </form>
+  <div class="container" id ="container">
+    <?php
+    // IF SESSION_STATUS = 1 (NONE)
+    // IF SESSION_STATUS = 2 (ACTIVE)
+    
+    echo $GLOBALS['loginBoolean'];
+    if (isset($GLOBALS['loginBoolean'])){
+      loadLogin();
+    } else {
+      loadLogin();
+    }
+    ?>
       <?php
       if(isset($_POST['comprobar']))
       {

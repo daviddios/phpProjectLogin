@@ -11,13 +11,27 @@
 <header>
     <?php
     session_start();
-    include 'functions.php';
+    include 'panelFunctions.php';
     ?>
 </header>
 <body>
     <p>Hello</p>
+    <a href="/phptest/panel/session_destroy.php">destroy session</a>
 <?php
-echo $_SESSION['panelUsername'];
+if(!isset($_SESSION['panelUsername'])){
+    echo 'Youre not login into please <a href="/phptest/login.php"> Login</a';
+} else {
+    echo "welcome " . $_SESSION['panelUsername'];
+};
+    echo session_status();
+?><form action="panel.php" method="post" name>
+<input type="submit" id="logout" value="LogOut" name="logout">
+</form>
+<?php
+    if(isset($_POST['logout']))
+    {
+       logout();
+    } 
 ?>
 </body>
 </html>
